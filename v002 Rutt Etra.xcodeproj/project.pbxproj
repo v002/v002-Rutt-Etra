@@ -25,7 +25,9 @@
 		16BA95420A7EB2EB001E4983 /* v002RuttEtraPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BA95410A7EB2EB001E4983 /* v002RuttEtraPlugIn.m */; };
 		16BA96310A7EB9AC001E4983 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16BA96300A7EB9AC001E4983 /* Quartz.framework */; };
 		1B24A0A3130B4BFA007DDD3B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B24A0A2130B4BFA007DDD3B /* OpenGL.framework */; };
-		1B24A107130B50F2007DDD3B /* v002Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B24A0FF130B50F2007DDD3B /* v002Shader.m */; };
+		1B83D81B15B0FCF700390CFC /* v002FBO.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D81515B0FCF700390CFC /* v002FBO.m */; };
+		1B83D81C15B0FCF700390CFC /* v002MasterPluginInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D81715B0FCF700390CFC /* v002MasterPluginInterface.m */; };
+		1B83D81D15B0FCF700390CFC /* v002Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D81915B0FCF700390CFC /* v002Shader.m */; };
 		1B9B1BC0130B6136003F103F /* v002.RuttEtraMRT.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B24A117130B552E007DDD3B /* v002.RuttEtraMRT.frag */; };
 		1B9B1BC1130B6136003F103F /* v002.RuttEtraMRT.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B24A119130B553A007DDD3B /* v002.RuttEtraMRT.vert */; };
 		1BAEAC74130BB38B00004F32 /* v002.RuttEtraMRTHQNormals.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BAEAC72130BB38000004F32 /* v002.RuttEtraMRTHQNormals.frag */; };
@@ -66,18 +68,21 @@
 /* Begin PBXFileReference section */
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		16AA5C440A7EEE7300888E31 /* v002 Rutt Etra_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "v002 Rutt Etra_Prefix.pch"; sourceTree = "<group>"; };
-		16BA95400A7EB2EB001E4983 /* v002RuttEtraPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 30; path = v002RuttEtraPlugIn.h; sourceTree = "<group>"; };
+		16BA95400A7EB2EB001E4983 /* v002RuttEtraPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = v002RuttEtraPlugIn.h; sourceTree = "<group>"; };
 		16BA95410A7EB2EB001E4983 /* v002RuttEtraPlugIn.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = v002RuttEtraPlugIn.m; sourceTree = "<group>"; };
 		16BA96300A7EB9AC001E4983 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		1B24A0A2130B4BFA007DDD3B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		1B24A0F8130B50F2007DDD3B /* v002FBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002FBO.h; sourceTree = "<group>"; };
-		1B24A0F9130B50F2007DDD3B /* v002FBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002FBO.m; sourceTree = "<group>"; };
-		1B24A0FC130B50F2007DDD3B /* v002MasterPluginInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002MasterPluginInterface.h; sourceTree = "<group>"; };
-		1B24A0FD130B50F2007DDD3B /* v002MasterPluginInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002MasterPluginInterface.m; sourceTree = "<group>"; };
-		1B24A0FE130B50F2007DDD3B /* v002Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002Shader.h; sourceTree = "<group>"; };
-		1B24A0FF130B50F2007DDD3B /* v002Shader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002Shader.m; sourceTree = "<group>"; };
 		1B24A117130B552E007DDD3B /* v002.RuttEtraMRT.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = v002.RuttEtraMRT.frag; sourceTree = "<group>"; };
 		1B24A119130B553A007DDD3B /* v002.RuttEtraMRT.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = v002.RuttEtraMRT.vert; sourceTree = "<group>"; };
+		1B83D81215B0FCF700390CFC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		1B83D81315B0FCF700390CFC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1B83D81415B0FCF700390CFC /* v002FBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002FBO.h; sourceTree = "<group>"; };
+		1B83D81515B0FCF700390CFC /* v002FBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002FBO.m; sourceTree = "<group>"; };
+		1B83D81615B0FCF700390CFC /* v002MasterPluginInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002MasterPluginInterface.h; sourceTree = "<group>"; };
+		1B83D81715B0FCF700390CFC /* v002MasterPluginInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002MasterPluginInterface.m; sourceTree = "<group>"; };
+		1B83D81815B0FCF700390CFC /* v002Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002Shader.h; sourceTree = "<group>"; };
+		1B83D81915B0FCF700390CFC /* v002Shader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002Shader.m; sourceTree = "<group>"; };
+		1B83D81A15B0FCF700390CFC /* v002UniqueClassNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002UniqueClassNames.h; sourceTree = "<group>"; };
 		1BAEAC72130BB38000004F32 /* v002.RuttEtraMRTHQNormals.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = v002.RuttEtraMRTHQNormals.frag; sourceTree = "<group>"; };
 		1BAEAC73130BB38000004F32 /* v002.RuttEtraMRTHQNormals.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = v002.RuttEtraMRTHQNormals.vert; sourceTree = "<group>"; };
 		1BAEAC7D130BB3E200004F32 /* v002.RuttEtraMRTNormals.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = v002.RuttEtraMRTNormals.frag; sourceTree = "<group>"; };
@@ -103,7 +108,6 @@
 		089C166AFE841209C02AAC07 /* Quartz Composer Plug In */ = {
 			isa = PBXGroup;
 			children = (
-				1B24A0F7130B50F2007DDD3B /* Helper Classes */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -140,6 +144,7 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1B83D81115B0FCF700390CFC /* v002 Utilities */,
 				16BA95400A7EB2EB001E4983 /* v002RuttEtraPlugIn.h */,
 				16BA95410A7EB2EB001E4983 /* v002RuttEtraPlugIn.m */,
 			);
@@ -154,19 +159,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B24A0F7130B50F2007DDD3B /* Helper Classes */ = {
+		1B83D81115B0FCF700390CFC /* v002 Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				1B24A0F8130B50F2007DDD3B /* v002FBO.h */,
-				1B24A0F9130B50F2007DDD3B /* v002FBO.m */,
-				1B24A0FC130B50F2007DDD3B /* v002MasterPluginInterface.h */,
-				1B24A0FD130B50F2007DDD3B /* v002MasterPluginInterface.m */,
-				1B24A0FE130B50F2007DDD3B /* v002Shader.h */,
-				1B24A0FF130B50F2007DDD3B /* v002Shader.m */,
+				1B83D81215B0FCF700390CFC /* icon.icns */,
+				1B83D81315B0FCF700390CFC /* README.md */,
+				1B83D81415B0FCF700390CFC /* v002FBO.h */,
+				1B83D81515B0FCF700390CFC /* v002FBO.m */,
+				1B83D81615B0FCF700390CFC /* v002MasterPluginInterface.h */,
+				1B83D81715B0FCF700390CFC /* v002MasterPluginInterface.m */,
+				1B83D81815B0FCF700390CFC /* v002Shader.h */,
+				1B83D81915B0FCF700390CFC /* v002Shader.m */,
+				1B83D81A15B0FCF700390CFC /* v002UniqueClassNames.h */,
 			);
-			name = "Helper Classes";
-			path = "../../Helper Classes";
-			sourceTree = SOURCE_ROOT;
+			path = "v002 Utilities";
+			sourceTree = "<group>";
 		};
 		32C88E010371C26100C91783 /* Other Sources */ = {
 			isa = PBXGroup;
@@ -244,7 +251,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16BA95420A7EB2EB001E4983 /* v002RuttEtraPlugIn.m in Sources */,
-				1B24A107130B50F2007DDD3B /* v002Shader.m in Sources */,
+				1B83D81B15B0FCF700390CFC /* v002FBO.m in Sources */,
+				1B83D81C15B0FCF700390CFC /* v002MasterPluginInterface.m in Sources */,
+				1B83D81D15B0FCF700390CFC /* v002Shader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +281,7 @@
 				GCC_PREFIX_HEADER = "v002 Rutt Etra_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "v002 Rutt Etra";
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = YES;
@@ -288,6 +298,7 @@
 				GCC_PREFIX_HEADER = "v002 Rutt Etra_Prefix.pch";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Graphics/Quartz Composer Plug-Ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "v002 Rutt Etra";
 				WRAPPER_EXTENSION = plugin;
 			};
