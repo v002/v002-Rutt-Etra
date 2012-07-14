@@ -36,7 +36,9 @@
     // GL State
 	GLint previousFBO;
 	GLint previousReadFBO;
-	GLint previousDrawFBO;	
+	GLint previousDrawFBO;
+    GLint previousReadBuffer;
+    GLint previousPixelPackBuffer;
 	GLint previousShader;
     
     BOOL rebuildGLResources;

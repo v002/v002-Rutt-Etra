@@ -503,12 +503,12 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 
     if(!self.inputLumaOrRaw)
     {
-        glTranslated(-(0.5 * aspect * self.inputScaleX) + self.inputTranslationX, -(0.5 * self.inputScaleY) + self.inputTranslationY, -(0.5 * self.inputScaleZ) + self.inputTranslationZ );
+        glTranslated(-(0.5 * aspect * self.inputScaleX) + self.inputTranslationX, -(0.5 * self.inputScaleY) + self.inputTranslationY, self.inputTranslationZ );
         glScaled(aspect * self.inputScaleX, self.inputScaleY, self.inputScaleZ);
     }
     else
     {
-        glTranslated(-(0.5 * self.inputScaleX) + self.inputTranslationX, -(0.5 * self.inputScaleY) + self.inputTranslationY, -(0.5 * self.inputScaleZ) + self.inputTranslationZ );
+        glTranslated(-(0.5 * self.inputScaleX) + self.inputTranslationX, -(0.5 * self.inputScaleY) + self.inputTranslationY, self.inputTranslationZ );
         glScaled(self.inputScaleX, self.inputScaleY, self.inputScaleZ);
     }
     
@@ -1005,6 +1005,9 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 	glGetIntegerv(GL_READ_FRAMEBUFFER_BINDING_EXT, &previousReadFBO);
 	glGetIntegerv(GL_DRAW_FRAMEBUFFER_BINDING_EXT, &previousDrawFBO);
 	glGetIntegerv(GL_CURRENT_PROGRAM, &previousShader);
+    glGetIntegerv(GL_READ_BUFFER, &previousReadBuffer);
+    glGetIntegerv(GL_PIXEL_PACK_BUFFER_BINDING, &previousPixelPackBuffer);
+    
 }
 
 - (void) popGLState:(CGLContextObj)cgl_ctx
@@ -1014,6 +1017,9 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 	glBindFramebufferEXT(GL_READ_FRAMEBUFFER_EXT, previousReadFBO);
 	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, previousFBO);
     
+    glReadBuffer(previousReadBuffer);
+    glBindBuffer(GL_PIXEL_PACK_BUFFER_ARB, previousPixelPackBuffer);
+
     glPopClientAttrib();
 	glPopAttrib();	
 }
