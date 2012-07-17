@@ -28,6 +28,7 @@
 		1B83D81B15B0FCF700390CFC /* v002FBO.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D81515B0FCF700390CFC /* v002FBO.m */; };
 		1B83D81C15B0FCF700390CFC /* v002MasterPluginInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D81715B0FCF700390CFC /* v002MasterPluginInterface.m */; };
 		1B83D81D15B0FCF700390CFC /* v002Shader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D81915B0FCF700390CFC /* v002Shader.m */; };
+		1B83D82015B22F9800390CFC /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B83D81215B0FCF700390CFC /* icon.icns */; };
 		1B9B1BC0130B6136003F103F /* v002.RuttEtraMRT.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B24A117130B552E007DDD3B /* v002.RuttEtraMRT.frag */; };
 		1B9B1BC1130B6136003F103F /* v002.RuttEtraMRT.vert in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B24A119130B553A007DDD3B /* v002.RuttEtraMRT.vert */; };
 		1BAEAC74130BB38B00004F32 /* v002.RuttEtraMRTHQNormals.frag in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BAEAC72130BB38000004F32 /* v002.RuttEtraMRTHQNormals.frag */; };
@@ -193,6 +194,7 @@
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				1B9B1BC6130B613B003F103F /* CopyFiles */,
+				1B83D81F15B22F8900390CFC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -228,6 +230,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B83D81F15B22F8900390CFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B83D82015B22F9800390CFC /* icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		233E2C690A83C783005A62DF /* ShellScript */ = {
@@ -330,6 +343,7 @@
 		233E2D8A0A83C7AC005A62DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Build & Install";
 			};
 			name = Debug;
@@ -337,6 +351,7 @@
 		233E2D8B0A83C7AC005A62DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Build & Install";
 			};
 			name = Release;

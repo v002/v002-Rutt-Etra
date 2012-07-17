@@ -141,13 +141,13 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 		return [NSDictionary dictionaryWithObjectsAndKeys:@"Point Attenuation",QCPortAttributeNameKey, nil];
     
     if([key isEqualToString:@"inputConstantAttenuation"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Constant Attenuation", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Point Constant Attenuation", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
 
     if([key isEqualToString:@"inputLinearAttenuation"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Linear Attenuation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Point Linear Attenuation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
 
     if([key isEqualToString:@"inputQuadraticAttenuation"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Quadratic Attenuation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Point Quadratic Attenuation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
 	if([key isEqualToString:@"inputCalculateNormals"])
 		return [NSDictionary dictionaryWithObjectsAndKeys:@"Calculate Normals",QCPortAttributeNameKey,
@@ -167,31 +167,31 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 				nil];
     
     if([key isEqualToString:@"inputRotationX"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Rotation X", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"X Rotation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputRotationY"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Rotation Y", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Y Rotation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputRotationZ"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Rotation Z", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Z Rotation", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputTranslationX"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Translation X", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"X Position", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputTranslationY"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Translation Y", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Y Position", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputTranslationZ"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Translation Z", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Z Position", QCPortAttributeNameKey, [NSNumber numberWithDouble:0.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputScaleX"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Scale X", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"X Scale", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputScaleY"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Scale Y", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Y Scale", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputScaleZ"])
-		return [NSDictionary dictionaryWithObjectsAndKeys:@"Scale Z", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
+		return [NSDictionary dictionaryWithObjectsAndKeys:@"Z Scale", QCPortAttributeNameKey, [NSNumber numberWithDouble:1.0],QCPortAttributeDefaultValueKey, nil];
     
     if([key isEqualToString:@"inputBlendMode"])
 		return [NSDictionary dictionaryWithObjectsAndKeys:@"Blending", QCPortAttributeNameKey,
@@ -226,7 +226,6 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
             @"inputImageLuma",
             @"inputLumaOrRaw",
             @"inputColorCorrect",
-            @"inputPointSpriteImage",
             @"inputColor",
             @"inputResolutionX",
             @"inputResolutionY",
@@ -239,20 +238,14 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
             @"inputNormalCoeff",
             @"inputHQNormals",
             
-            @"inputAttenuatePoints",
-            @"inputConstantAttenuation",
-            @"inputLinearAttenuation",
-            @"inputQuadraticAttenuation",
-
-            
             @"inputGenerateUVs",
             @"inputUVGenMode",
-            @"inputRotationX",
-            @"inputRotationY",
-            @"inputRotationZ",
             @"inputTranslationX",
             @"inputTranslationY",
             @"inputTranslationZ",
+            @"inputRotationX",
+            @"inputRotationY",
+            @"inputRotationZ",
             @"inputScaleX",
             @"inputScaleY",
             @"inputScaleZ", 
@@ -261,6 +254,13 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
             @"inputEnableClipping",
             @"inputMinClip",
             @"inputMaxClip",
+            
+            @"inputPointSpriteImage",
+            @"inputAttenuatePoints",
+            @"inputConstantAttenuation",
+            @"inputLinearAttenuation",
+            @"inputQuadraticAttenuation",
+
              nil];
 }   
 

@@ -1,3 +1,7 @@
+#define V002_UNIQUE_CLASS_NAME_PREFIX v002RuttEtraShader
+
+
+#define    kQCPlugIn_Category          [NSArray arrayWithObjects:@"v002", nil]
 #ifdef __OBJC__
 	#import <Quartz/Quartz.h>
 #endif
