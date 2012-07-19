@@ -67,7 +67,8 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 
 + (NSDictionary*) attributes
 {
-	return [NSDictionary dictionaryWithObjectsAndKeys:kQCPlugIn_Name, QCPlugInAttributeNameKey, kQCPlugIn_Description, QCPlugInAttributeDescriptionKey, nil];
+	return [NSDictionary dictionaryWithObjectsAndKeys:kQCPlugIn_Name, QCPlugInAttributeNameKey, kQCPlugIn_Description, QCPlugInAttributeDescriptionKey,
+        kQCPlugIn_Category, @"categories", nil]; // Horrible work around
 }
 
 + (NSDictionary*) attributesForPropertyPortWithKey:(NSString*)key

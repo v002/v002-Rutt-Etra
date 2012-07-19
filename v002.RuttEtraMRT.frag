@@ -15,7 +15,7 @@ void main (void)
     float normX = floor(gl_FragCoord.x)  / (imageSize.x - 1.0);
     float normY = floor(gl_FragCoord.y)  / (imageSize.y - 1.0);
     vec4 lumaPixel = vec4(normX, normY, luma * extrude, 1.0);
-
+    
 	gl_FragData[0] = mix(lumaPixel, vec4(pixel.rgb, 1.0), useRaw);
     gl_FragData[1] = vec4(normX, normY, 0.0, 1.0);
 }
