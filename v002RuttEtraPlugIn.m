@@ -945,7 +945,7 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
         texureAttachmentVertices = 0;
     }
 
-    if(texureAttachmentNormals);
+    if(texureAttachmentNormals)
     {
         glDeleteTextures(1, &texureAttachmentNormals);
         texureAttachmentNormals = 0;
