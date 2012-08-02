@@ -16,7 +16,7 @@
 #import "v002RuttEtraPlugIn.h"
 
 #define	kQCPlugIn_Name				@"v002 Rutt Etra 3.0"
-#define	kQCPlugIn_Description		@"v002 Rutt Etra 3.0 description"
+#define	kQCPlugIn_Description		@"For Bill.\n\nEmulates the Rutt/Etra raster based analog computer, video synthesizer and effects system. This software is donation ware. All proceeds go towards helping Bill Etra and the further development of this plugin.\n\nIf you would like to donate, please visit http://v002.info. \n\nThank you."
 
 static void planeEquation(float x1, float y1, float z1, float x2, float y2, float z2, float x3, float y3, float z3, double* eq)
 {
@@ -278,9 +278,7 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 - (id) init
 {
 	if(self = [super init])
-    {
-        rebuildGLResources = NO;
-        
+    {        
         eq1 = (double*)malloc(4 * sizeof(double));
         eq2 = (double*)malloc(4 * sizeof(double));
 	}
@@ -306,6 +304,7 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 
 - (BOOL) startExecution:(id<QCPlugInContext>)context
 {
+    [self createPersistantGLResourcesInContext:[context CGLContextObj]];
 	return YES;
 }
 
@@ -743,6 +742,43 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 
 - (void) stopExecution:(id<QCPlugInContext>)context
 {
+    [self destroyGLResourcesInContext:[context CGLContextObj]];
+    [self destroyPersistantGLResources];
+}
+
+- (void) createPersistantGLResourcesInContext:(CGLContextObj)cgl_ctx
+{
+    if (ruttEtraMRTshader == nil)
+    {
+        // load our MRT shader
+        ruttEtraMRTshader =  [[v002Shader alloc] initWithShadersInBundle:[NSBundle bundleForClass:[self class]]
+                                                                withName:@"v002.RuttEtraMRT"
+                                                              forContext:cgl_ctx];
+    }
+    if (ruttEtraMRTshaderNormals == nil)
+    {
+        ruttEtraMRTshaderNormals = [[v002Shader alloc] initWithShadersInBundle:[NSBundle bundleForClass:[self class]]
+                                                                      withName:@"v002.RuttEtraMRTNormals"
+                                                                    forContext:cgl_ctx];
+    }
+    if (ruttEtraMRTshaderNormalsHQ == nil)
+    {
+        ruttEtraMRTshaderNormalsHQ = [[v002Shader alloc] initWithShadersInBundle:[NSBundle bundleForClass:[self class]]
+                                                                        withName:@"v002.RuttEtraMRTHQNormals"
+                                                                      forContext:cgl_ctx];
+    }
+}
+
+- (void) destroyPersistantGLResources
+{
+    [ruttEtraMRTshader release];
+    ruttEtraMRTshader = nil;
+    
+    [ruttEtraMRTshaderNormals release];
+    ruttEtraMRTshaderNormals = nil;
+    
+    [ruttEtraMRTshaderNormalsHQ release];
+    ruttEtraMRTshaderNormalsHQ = nil;
 }
 
 - (void) createGLResourcesInContext:(CGLContextObj)cgl_ctx width:(NSUInteger)w height:(NSUInteger)h drawType:(NSUInteger)drawType normals:(BOOL)normals 
@@ -750,11 +786,6 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
     [self destroyGLResourcesInContext:cgl_ctx];
 
     [self pushGLState:cgl_ctx];
-    
-    // load our MRT shader
-    ruttEtraMRTshader =  [[v002Shader alloc] initWithShadersInBundle:[NSBundle bundleForClass:[self class]] withName:@"v002.RuttEtraMRT" forContext:cgl_ctx];
-    ruttEtraMRTshaderNormals = [[v002Shader alloc] initWithShadersInBundle:[NSBundle bundleForClass:[self class]] withName:@"v002.RuttEtraMRTNormals" forContext:cgl_ctx];
-    ruttEtraMRTshaderNormalsHQ = [[v002Shader alloc] initWithShadersInBundle:[NSBundle bundleForClass:[self class]] withName:@"v002.RuttEtraMRTHQNormals" forContext:cgl_ctx];
 
     // create our FBO, and texture attachments
     glGenFramebuffers(1, & fboID);
@@ -986,15 +1017,6 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
         glDeleteVertexArraysAPPLE(1, &vaoID);
         vaoID = 0;
     }
-    
-    [ruttEtraMRTshader release];
-    ruttEtraMRTshader = nil;
-
-    [ruttEtraMRTshaderNormals release];
-    ruttEtraMRTshaderNormals = nil;
-
-    [ruttEtraMRTshaderNormalsHQ release];
-    ruttEtraMRTshaderNormalsHQ = nil;
 }
 
 - (void) pushGLState:(CGLContextObj)cgl_ctx
@@ -1008,7 +1030,6 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
 	glGetIntegerv(GL_CURRENT_PROGRAM, &previousShader);
     glGetIntegerv(GL_READ_BUFFER, &previousReadBuffer);
     glGetIntegerv(GL_PIXEL_PACK_BUFFER_BINDING, &previousPixelPackBuffer);
-    
 }
 
 - (void) popGLState:(CGLContextObj)cgl_ctx

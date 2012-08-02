@@ -40,9 +40,7 @@
     GLint previousReadBuffer;
     GLint previousPixelPackBuffer;
 	GLint previousShader;
-    
-    BOOL rebuildGLResources;
-    
+        
     double* eq1;
     double* eq2;
 }
@@ -86,7 +84,8 @@
 @end
 
 @interface v002RuttEtraPlugIn (Execution)
-
+- (void) createPersistantGLResourcesInContext:(CGLContextObj)cgl_ctx;
+- (void) destroyPersistantGLResources;
 - (void) createGLResourcesInContext:(CGLContextObj)cgl_ctx width:(NSUInteger)w height:(NSUInteger)h drawType:(NSUInteger)drawType normals:(BOOL)normals;
 - (void) destroyGLResourcesInContext:(CGLContextObj)cgl_ctx;
 - (void) pushGLState:(CGLContextObj)cgl_ctx;
