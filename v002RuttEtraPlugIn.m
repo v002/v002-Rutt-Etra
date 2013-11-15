@@ -849,7 +849,7 @@ static void planeEquation(float x1, float y1, float z1, float x2, float y2, floa
         GLuint i = 0, x, y;
 		for( y = 0; y < h - 1 ; y++)
 		{
-			for(x = 0; x < w - 1 ; x++)
+			for(x = 0; x < w - 1 && w > 2; x++)
 			{
 				// this little aparatus makes sure we do not draw a line segment between different rows of scanline.
 				if (i % (w - 2) <= (w - 1))
