@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>v002 Rutt Etra 3.0 Beta 1, © 2008-2012 vade &amp; bangnoise</string>
+	<string>v002 Rutt Etra 3 (Beta), © 2008-2014 vade &amp; bangnoise</string>
 	<key>CFBundleIconFile</key>
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
@@ -19,9 +19,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>31</string>
 	<key>CFBundleVersion</key>
-	<string>3.0 Beta 1</string>
+	<string>31</string>
 	<key>QCPlugInClasses</key>
 	<array>
 		<string>v002RuttEtraPlugIn</string>
